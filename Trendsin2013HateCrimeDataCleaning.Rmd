@@ -1,0 +1,385 @@
+
+**This is our Dataset**
+```{r}
+`table13.(1)` <- read.csv("C:/Users/obely/Downloads/table13 (1).csv", header=TRUE)
+```
+
+**Data Cleaning Section**
+```{r}
+hateCrimeData<- `table13.(1)`
+```
+
+```{r}
+library(dplyr)
+library(tidyverse)
+```
+
+#For this analysis, we are only interested in the "Cities" Agency Type as a unit of geographic, population, and legal organization. 
+```{r}
+hateCrimeSubset<- hateCrimeData %>% filter(Agency.type=="Cities")
+```
+
+```{r}
+hateCrimeSubset$Region<- NA
+```
+
+```{r}
+#New England
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Connecticut"){
+  hateCrimeSubset$Region[i]<- "New England"}
+  
+}
+
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Maine"){
+  hateCrimeSubset$Region[i]<- "New England"}
+  
+}
+
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Massachusetts"){
+  hateCrimeSubset$Region[i]<- "New England"}
+  
+}
+
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="New_Hampshire"){
+  hateCrimeSubset$Region[i]<- "New England"}
+  
+}
+
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Rhode_Island"){
+  hateCrimeSubset$Region[i]<- "New England"}
+  
+}
+
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Vermont"){
+  hateCrimeSubset$Region[i]<- "New England"}
+  
+}
+```
+
+```{r}
+#Mideast
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Delaware"){
+  hateCrimeSubset$Region[i]<- "Mideast"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Maryland"){
+  hateCrimeSubset$Region[i]<- "Mideast"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="New_Jersey"){
+  hateCrimeSubset$Region[i]<- "Mideast"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="New_York"){
+  hateCrimeSubset$Region[i]<- "Mideast"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Pennsylvania"){
+  hateCrimeSubset$Region[i]<- "Mideast"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="DC"){
+  hateCrimeSubset$Region[i]<- "Mideast"}
+  
+}
+```
+
+```{r}
+#Great Lakes
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Illinois"){
+  hateCrimeSubset$Region[i]<- "Great Lakes"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Indiana"){
+  hateCrimeSubset$Region[i]<- "Great Lakes"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Michigan"){
+  hateCrimeSubset$Region[i]<- "Great Lakes"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Ohio"){
+  hateCrimeSubset$Region[i]<- "Great Lakes"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Wisconsin"){
+  hateCrimeSubset$Region[i]<- "Great Lakes"}
+  
+}
+```
+
+```{r}
+#Plains
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Iowa"){
+  hateCrimeSubset$Region[i]<- "Plains"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Kansas"){
+  hateCrimeSubset$Region[i]<- "Plains"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Minnesota"){
+  hateCrimeSubset$Region[i]<- "Plains"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Missouri"){
+  hateCrimeSubset$Region[i]<- "Plains"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Nebraska"){
+  hateCrimeSubset$Region[i]<- "Plains"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="North_Dakota"){
+  hateCrimeSubset$Region[i]<- "Plains"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="South_Dakota"){
+  hateCrimeSubset$Region[i]<- "Plains"}
+  
+}
+```
+
+```{r}
+#Southeast
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Alabama"){
+  hateCrimeSubset$Region[i]<- "Southeast"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Arkansas"){
+  hateCrimeSubset$Region[i]<- "Southeast"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Florida"){
+  hateCrimeSubset$Region[i]<- "Southeast"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Georgia"){
+  hateCrimeSubset$Region[i]<- "Southeast"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Kentucky"){
+  hateCrimeSubset$Region[i]<- "Southeast"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Louisiana"){
+  hateCrimeSubset$Region[i]<- "Southeast"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Mississippi"){
+  hateCrimeSubset$Region[i]<- "Southeast"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="North_Carolina"){
+  hateCrimeSubset$Region[i]<- "Southeast"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="South_Carolina"){
+  hateCrimeSubset$Region[i]<- "Southeast"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Tennessee"){
+  hateCrimeSubset$Region[i]<- "Southeast"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Virginia"){
+  hateCrimeSubset$Region[i]<- "Southeast"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="West_Virginia"){
+  hateCrimeSubset$Region[i]<- "Southeast"}
+  
+}
+```
+
+```{r}
+#Southwest
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Arizona"){
+  hateCrimeSubset$Region[i]<- "Southwest"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="New_Mexico"){
+  hateCrimeSubset$Region[i]<- "Southwest"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Oklahoma"){
+  hateCrimeSubset$Region[i]<- "Southwest"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Texas"){
+  hateCrimeSubset$Region[i]<- "Southwest"}
+  
+}
+```
+
+```{r}
+#Rocky Mountains
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Colorado"){
+  hateCrimeSubset$Region[i]<- "Rocky Mountain"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Idaho"){
+  hateCrimeSubset$Region[i]<- "Rocky Mountain"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Montana"){
+  hateCrimeSubset$Region[i]<- "Rocky Mountain"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Utah"){
+  hateCrimeSubset$Region[i]<- "Rocky Mountain"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Wyoming"){
+  hateCrimeSubset$Region[i]<- "Rocky Mountain"}
+  
+}
+```
+
+```{r}
+#Far West 
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Alaska"){
+  hateCrimeSubset$Region[i]<- "Far West"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="California"){
+  hateCrimeSubset$Region[i]<- "Far West"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Hawaii"){
+  hateCrimeSubset$Region[i]<- "Far West"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Nevada"){
+  hateCrimeSubset$Region[i]<- "Far West"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Oregon"){
+  hateCrimeSubset$Region[i]<- "Far West"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Washington"){
+  hateCrimeSubset$Region[i]<- "Far West"}
+  
+}
+```
+
+*The city-size column*
+
+```{r}
+hateCrimeSubset$Pop2<- as.factor(hateCrimeSubset$Population)
+levels(hateCrimeSubset$Pop2)
+class(hateCrimeSubset$Pop2)
+```
+
+```{r}
+hateCrimeSubset$Pop3 <- as.numeric(gsub(",","",hateCrimeSubset$Pop2))
+class(hateCrimeSubset$Pop3)
+```
+
+```{r}
+hateCrimeSubset$City.size<- NA
+```
+
+```{r}
+#Very Small Towns
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$Pop3[i]<=2500){
+  hateCrimeSubset$City.size[i]<- "Very Small Towns"}
+}
+
+```
+
+```{r}
+#Small Towns
+for (i in 1:nrow(hateCrimeSubset)) {
+  if (hateCrimeSubset$Pop3[i] >= 2501 & hateCrimeSubset$Pop3[i] <= 9999) {
+    hateCrimeSubset$City.size[i] <- "Small Towns"
+  }
+}
+```
+
+```{r}
+#Small Cities 
+for (i in 1:nrow(hateCrimeSubset)) {
+  if (hateCrimeSubset$Pop3[i] >= 10000 & hateCrimeSubset$Pop3[i] <= 49999) {
+    hateCrimeSubset$City.size[i] <- "Small Cities"
+  }
+}
+```
+
+```{r}
+#Mid-Sized Cities 
+
+for (i in 1:nrow(hateCrimeSubset)) {
+  if (hateCrimeSubset$Pop3[i] >= 50000 & hateCrimeSubset$Pop3[i] <= 249999) {
+    hateCrimeSubset$City.size[i] <- "Mid-Sized Cities"
+  }
+}
+```
+
+```{r}
+for (i in 1:nrow(hateCrimeSubset)) {
+  if (hateCrimeSubset$Pop3[i] >= 250000 & hateCrimeSubset$Pop3[i] <= 999999) {
+    hateCrimeSubset$City.size[i] <- "Large Cities"
+  }
+}
+```
+
+```{r}
+#Metropolitan Areas 
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$Pop3[i]>=1000000){
+  hateCrimeSubset$City.size[i]<- "Metropolitan Areas"}
+}
+```
+
+#At this point, our data is adequately cleaned We have done the following: 
+- Created a subset which entails only cities. 
+- Turned our Population column into numerical data. 
+- Created two new columns which sorted the information from the "State" column into the "Region" column, and sorted the information from the "Population" column into the "City.size" column. 
