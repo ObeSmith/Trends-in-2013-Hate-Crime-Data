@@ -1,0 +1,609 @@
+---
+title: "HateCrimeDataSubset"
+author: "Obelyn Smith"
+date: "2024-12-11"
+output: html_document
+---
+
+```{r include=FALSE}
+`table13.(1)` <- read.csv("C:/Users/obely/Downloads/table13 (1).csv", header=TRUE)
+```
+
+```{r include=FALSE}
+hateCrimeData<- `table13.(1)`
+```
+
+```{r include=FALSE}
+library(dplyr)
+library(tidyverse)
+```
+
+```{r include=FALSE}
+hateCrimeSubset<- hateCrimeData %>% filter(Agency.type=="Cities")
+```
+
+```{r include=FALSE}
+hateCrimeSubset$Region<- NA
+```
+
+```{r include=FALSE}
+#New England
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Connecticut"){
+  hateCrimeSubset$Region[i]<- "New England"}
+  
+}
+
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Maine"){
+  hateCrimeSubset$Region[i]<- "New England"}
+  
+}
+
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Massachusetts"){
+  hateCrimeSubset$Region[i]<- "New England"}
+  
+}
+
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="New_Hampshire"){
+  hateCrimeSubset$Region[i]<- "New England"}
+  
+}
+
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Rhode_Island"){
+  hateCrimeSubset$Region[i]<- "New England"}
+  
+}
+
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Vermont"){
+  hateCrimeSubset$Region[i]<- "New England"}
+  
+}
+```
+
+```{r include=FALSE}
+#Mideast
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Delaware"){
+  hateCrimeSubset$Region[i]<- "Mideast"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Maryland"){
+  hateCrimeSubset$Region[i]<- "Mideast"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="New_Jersey"){
+  hateCrimeSubset$Region[i]<- "Mideast"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="New_York"){
+  hateCrimeSubset$Region[i]<- "Mideast"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Pennsylvania"){
+  hateCrimeSubset$Region[i]<- "Mideast"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="DC"){
+  hateCrimeSubset$Region[i]<- "Mideast"}
+  
+}
+```
+
+```{r include=FALSE}
+#Great Lakes
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Illinois"){
+  hateCrimeSubset$Region[i]<- "Great Lakes"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Indiana"){
+  hateCrimeSubset$Region[i]<- "Great Lakes"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Michigan"){
+  hateCrimeSubset$Region[i]<- "Great Lakes"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Ohio"){
+  hateCrimeSubset$Region[i]<- "Great Lakes"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Wisconsin"){
+  hateCrimeSubset$Region[i]<- "Great Lakes"}
+  
+}
+```
+
+```{r include=FALSE}
+#Plains
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Iowa"){
+  hateCrimeSubset$Region[i]<- "Plains"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Kansas"){
+  hateCrimeSubset$Region[i]<- "Plains"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Minnesota"){
+  hateCrimeSubset$Region[i]<- "Plains"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Missouri"){
+  hateCrimeSubset$Region[i]<- "Plains"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Nebraska"){
+  hateCrimeSubset$Region[i]<- "Plains"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="North_Dakota"){
+  hateCrimeSubset$Region[i]<- "Plains"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="South_Dakota"){
+  hateCrimeSubset$Region[i]<- "Plains"}
+  
+}
+```
+
+```{r include=FALSE}
+#Southeast
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Alabama"){
+  hateCrimeSubset$Region[i]<- "Southeast"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Arkansas"){
+  hateCrimeSubset$Region[i]<- "Southeast"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Florida"){
+  hateCrimeSubset$Region[i]<- "Southeast"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Georgia"){
+  hateCrimeSubset$Region[i]<- "Southeast"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Kentucky"){
+  hateCrimeSubset$Region[i]<- "Southeast"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Louisiana"){
+  hateCrimeSubset$Region[i]<- "Southeast"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Mississippi"){
+  hateCrimeSubset$Region[i]<- "Southeast"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="North_Carolina"){
+  hateCrimeSubset$Region[i]<- "Southeast"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="South_Carolina"){
+  hateCrimeSubset$Region[i]<- "Southeast"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Tennessee"){
+  hateCrimeSubset$Region[i]<- "Southeast"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Virginia"){
+  hateCrimeSubset$Region[i]<- "Southeast"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="West_Virginia"){
+  hateCrimeSubset$Region[i]<- "Southeast"}
+  
+}
+```
+
+```{r include=FALSE}
+#Southwest
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Arizona"){
+  hateCrimeSubset$Region[i]<- "Southwest"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="New_Mexico"){
+  hateCrimeSubset$Region[i]<- "Southwest"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Oklahoma"){
+  hateCrimeSubset$Region[i]<- "Southwest"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Texas"){
+  hateCrimeSubset$Region[i]<- "Southwest"}
+  
+}
+```
+
+```{r include=FALSE}
+#Rocky Mountains
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Colorado"){
+  hateCrimeSubset$Region[i]<- "Rocky Mountain"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Idaho"){
+  hateCrimeSubset$Region[i]<- "Rocky Mountain"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Montana"){
+  hateCrimeSubset$Region[i]<- "Rocky Mountain"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Utah"){
+  hateCrimeSubset$Region[i]<- "Rocky Mountain"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Wyoming"){
+  hateCrimeSubset$Region[i]<- "Rocky Mountain"}
+  
+}
+```
+
+```{r include=FALSE}
+#Far West 
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Alaska"){
+  hateCrimeSubset$Region[i]<- "Far West"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="California"){
+  hateCrimeSubset$Region[i]<- "Far West"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Hawaii"){
+  hateCrimeSubset$Region[i]<- "Far West"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Nevada"){
+  hateCrimeSubset$Region[i]<- "Far West"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Oregon"){
+  hateCrimeSubset$Region[i]<- "Far West"}
+  
+}
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$State[i]=="Washington"){
+  hateCrimeSubset$Region[i]<- "Far West"}
+  
+}
+```
+
+```{r include=FALSE}
+hateCrimeSubset$Pop2<- as.factor(hateCrimeSubset$Population)
+levels(hateCrimeSubset$Pop2)
+class(hateCrimeSubset$Pop2)
+```
+
+```{r include=FALSE}
+hateCrimeSubset$Pop3 <- as.numeric(gsub(",","",hateCrimeSubset$Pop2))
+class(hateCrimeSubset$Pop3)
+```
+
+```{r include=FALSE}
+hateCrimeSubset$City.size<- NA
+```
+
+```{r include=FALSE}
+#Very Small Towns
+
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$Pop3[i]<=2500){
+  hateCrimeSubset$City.size[i]<- "Very Small Towns"}
+}
+
+```
+
+```{r include=FALSE}
+#Small Towns
+for (i in 1:nrow(hateCrimeSubset)) {
+  if (hateCrimeSubset$Pop3[i] >= 2501 & hateCrimeSubset$Pop3[i] <= 9999) {
+    hateCrimeSubset$City.size[i] <- "Small Towns"
+  }
+}
+```
+
+```{r include=FALSE}
+#Small Cities 
+for (i in 1:nrow(hateCrimeSubset)) {
+  if (hateCrimeSubset$Pop3[i] >= 10000 & hateCrimeSubset$Pop3[i] <= 49999) {
+    hateCrimeSubset$City.size[i] <- "Small Cities"
+  }
+}
+```
+
+```{r include=FALSE}
+#Mid-Sized Cities 
+
+for (i in 1:nrow(hateCrimeSubset)) {
+  if (hateCrimeSubset$Pop3[i] >= 50000 & hateCrimeSubset$Pop3[i] <= 249999) {
+    hateCrimeSubset$City.size[i] <- "Mid-Sized Cities"
+  }
+}
+```
+
+```{r include=FALSE}
+for (i in 1:nrow(hateCrimeSubset)) {
+  if (hateCrimeSubset$Pop3[i] >= 250000 & hateCrimeSubset$Pop3[i] <= 999999) {
+    hateCrimeSubset$City.size[i] <- "Large Cities"
+  }
+}
+```
+
+```{r include=FALSE}
+#Metropolitan Areas 
+for (i in 1:nrow(hateCrimeSubset)) {if(hateCrimeSubset$Pop3[i]>=1000000){
+  hateCrimeSubset$City.size[i]<- "Metropolitan Areas"}
+}
+```
+
+**Research Question 1**
+Can Region, City Size, or the interaction between Region and City Size predict hate crimes for each category of hate crime? 
+
+Race
+```{r}
+lmRace<- lm(Race~ Region + City.size + Region:City.size, data=hateCrimeSubset)
+summary(lmRace)
+#P-value is extremely small at p-value: < 2.2e-16. We reject the null hypothesis. 
+```
+
+```{r}
+library(lsr)
+etaSquared(lmRace)
+#When we look at eta squared, we find that City.size has a large effect and the interaction between Region and City.size has a large (though smaller) effect. Region alone does not have a small effect. 
+```
+
+
+```{r}
+library(ggeffects)
+predict1<- ggpredict(lmRace, terms=c("Region", "City.size"))
+plot(predict1)
+```
+
+
+Religion
+```{r}
+lmReligion<- lm(Religion~ Region + City.size + Region:City.size, data=hateCrimeSubset)
+summary(lmReligion)
+#P-value is extremely small at p-value: < 2.2e-16. We reject the null hypothesis.
+```
+
+```{r}
+library(lsr)
+etaSquared(lmReligion)
+#We see that Region has a small effect, City.size has a large effect, and the interaction between Region and City.size also have a large effect. 
+```
+
+```{r}
+predict2<- ggpredict(lmReligion, terms=c("Region", "City.size"))
+plot(predict2)
+```
+
+Sexual Orientation
+```{r}
+lmSO<- lm(Sexual.orientation~ Region + City.size + Region:City.size, data=hateCrimeSubset)
+summary(lmSO)
+#P-value is extremely small at p-value: < 2.2e-16. We reject the null hypothesis.
+```
+
+```{r}
+library(lsr)
+etaSquared(lmSO)
+#Region has a small effect; City.size and the interaction between Region and City.size have large effects. 
+```
+
+```{r}
+predict3<- ggpredict(lmSO, terms=c("Region", "City.size"))
+plot(predict3) + labs(x="Region", y="Sexual Orientation", title = "Predicted Values of Sexual Orientation", subtitle = "Linear Model")
+```
+
+Ethnicity
+```{r}
+lmEthn<- lm(Ethnicity~ Region + City.size + Region:City.size, data=hateCrimeSubset)
+summary(lmEthn) 
+#P-value is extremely small at p-value: < 2.2e-16. We reject the null hypothesis.
+```
+
+```{r}
+library(lsr)
+etaSquared(lmEthn)
+#Region does not have an effect; City.size and the interaction between Region and City.size have large effects.
+```
+
+```{r}
+predict4<- ggpredict(lmEthn, terms=c("Region", "City.size"))
+plot(predict4)
+```
+
+Disability
+```{r}
+lmDisa<- lm(Disability~ Region + City.size + Region:City.size, data=hateCrimeSubset)
+summary(lmDisa)
+#P-value is extremely small at p-value: < 2.2e-16. We reject the null hypothesis.
+```
+
+```{r}
+library(lsr)
+etaSquared(lmDisa)
+#Region does not have an effect; City.size has a small effect, and the interaction has a medium effect. 
+```
+
+```{r}
+predict5<- ggpredict(lmDisa, terms=c("Region", "City.size"))
+plot(predict5)
+```
+
+Gender
+```{r}
+lmGen<- lm(Gender~ Region + City.size + Region:City.size, data=hateCrimeSubset)
+summary(lmGen)
+#p-value is extremely small at 4.341e-12; we reject the null hypothesis.
+```
+
+```{r}
+library(lsr)
+etaSquared(lmGen)
+#Region does not have an effect. City.size has a small effect. The interaction has a medium effect. 
+```
+
+```{r}
+predict6<- ggpredict(lmGen, terms=c("Region", "City.size"))
+plot(predict6)
+```
+
+Gender Identity
+```{r}
+lmGI<- lm(Gender.Identity~ Region + City.size + Region:City.size, data=hateCrimeSubset)
+summary(lmGI)
+#P-value is extremely small at p-value: < 2.2e-16. We reject the null hypothesis.
+```
+
+```{r}
+library(lsr)
+etaSquared(lmGI)
+#Region does not have an effect. City.size has a small effect. The interaction has a large effect. 
+```
+
+```{r}
+predict7<- ggpredict(lmGI, terms=c("Region", "City.size"))
+plot(predict7) + labs(x="Region", y="Gender Identity", title = "Predicted values of Gender Identity", subtitle = "Linear Model")
+```
+
+**Research Question 2**
+Do the quarters have a statistically significant difference in mean number of overall hate crimes?  
+
+```{r}
+longHate <- hateCrimeSubset %>%
+  pivot_longer(cols = Race:Gender.Identity,   
+               names_to = "HateCrimeType",  
+               values_to = "HateCrimeValue") 
+
+longHate <- longHate %>%
+  pivot_longer(cols = starts_with("X"),  
+               names_to = "Quarter",    
+               values_to = "HateCrimeCount") 
+```
+
+
+```{r}
+avR2<- aov(HateCrimeCount~ Quarter, longHate)
+summary(avR2)
+```
+
+```{r}
+TukeyHSD(avR2)
+#Statistically significant difference between 2nd and 1st quarter; 3rd and 1st; 4th and 2nd; 4th and 3rd. This difference could be the result of factors which it would be necessary for further research to analyze for potential contributions to preventive measures hate crimes. 
+
+```
+
+```{r}
+mean(hateCrimeSubset$X1st.quarter, na.rm =TRUE)
+mean(hateCrimeSubset$X2nd.quarter, na.rm =TRUE)
+mean(hateCrimeSubset$X3rd.quarter, na.rm =TRUE)
+mean(hateCrimeSubset$X4th.quarter, na.rm =TRUE)
+```
+
+```{r}
+longHateDetails <- longHate %>% group_by(Quarter) %>% summarise(hateCrimeMean = mean(HateCrimeCount, na.rm = TRUE), SE = sd(HateCrimeCount, na.rm = TRUE) / sqrt(n()))
+```
+
+
+```{r}
+longHateDetails$Quarter<- as.factor(longHateDetails$Quarter)
+levels(longHateDetails$Quarter)<- c("First Quarter", "Second Quarter", "Third Quarter", "Fourth Quarter")
+```
+
+```{r}
+library(ggplot2)
+```
+
+```{r}
+ggplot(longHateDetails, aes(Quarter, hateCrimeMean)) + geom_bar(stat="identity", position = "dodge", color="sienna", fill="burlywood") + theme_linedraw() + labs(y="Overall Quarter Hate Crime Count", x="Quarter", title = "Total Hate Crime Count Across Quarters", subtitle = "Anova") +geom_errorbar(aes(ymin=hateCrimeMean- SE, ymax = hateCrimeMean+ SE, width = 0.2))
+```
+
+
+**Research Question 3**
+Is there a positive relationship between city population and overall hate crime across quarters? 
+
+Analyses: 
+```{r}
+library(ltm)
+cor.test(hateCrimeSubset$X1st.quarter, hateCrimeSubset$Pop3, method = "spearman")
+#Rho is 0.287
+#P-value is extremely small at p-value: < 2.2e-16. We reject the null hypothesis.
+```
+
+```{r}
+cor.test(hateCrimeSubset$X2nd.quarter, hateCrimeSubset$Pop3, method = "spearman")
+#0.287
+#P-value is extremely small at p-value: < 2.2e-16. We reject the null hypothesis.
+```
+
+```{r}
+cor.test(hateCrimeSubset$X3rd.quarter, hateCrimeSubset$Pop3, method = "spearman")
+#0.267
+#P-value is extremely small at p-value: < 2.2e-16. We reject the null hypothesis.
+```
+
+```{r}
+cor.test(hateCrimeSubset$X4th.quarter, hateCrimeSubset$Pop3, method = "spearman")
+#0.283
+#P-value is extremely small at p-value: < 2.2e-16. We reject the null hypothesis.
+```
+
+
+As we can see, there is a positive correlation. 
+```{r}
+longHate$Quarter<-as.factor(longHate$Quarter)
+levels(longHate$Quarter)<-c("1st Quarter", "2nd Quarter", "3rd Quarter", "Fourth Quarter")
+levels(longHate$Quarter)
+```
+
+```{r}
+library(ggplot2)
+ggplot(longHate, aes(HateCrimeCount, Pop3)) + geom_point() + theme()  + labs(y="City Population", x="Hate Crime Count", title = "Hate Crime Count by City Population Size", subtitle="Spearman's Rho") +  geom_smooth(method = "lm", color = "red", linetype = "dashed") + facet_wrap(~Quarter)
+```
+
