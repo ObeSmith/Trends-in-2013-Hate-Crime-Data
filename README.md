@@ -23,7 +23,7 @@ Metropolitan Areas: 1,000,000+
 
 Please note the distinction between the files in this repository: 
 - "HateCrimeData.GitHub.Rmd" -> This file is the entire RMD file that the data cleaning and analysis was performed on.
-- "HateCrimeDataAnalysisandResearchQuestions" -> This file hides the data cleaning section to increase easy accessibility of the research question/analysis section.
+- "HateCrimeDataAnalysisandResearchQuestions" -> This file hides the data cleaning section to increase easy viewing on GitHub of the research question/analysis section.
 - "HateCrimeSubset.xlsx" -> This file is the subset created according to the metrics above.
 - "PivotedLongerHateCrimeSubset.xlsx" -> This file is the pivoted longer subset used in Research Question 2 and described above.
 - "Trendsin2013HateCrimeDataCleaning" -> This file hides the data analysis section and includes only the data cleaning portion for ease of accessibility. 
